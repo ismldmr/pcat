@@ -32,7 +32,7 @@ https://templatemo.com/tm-552-video-catalog
 					<div class="row mt-3 mb-5 pb-3">
 						<div class="col-12">
 							<div class="mx-auto tm-about-text-container px-3">
-								<h2 class="tm-page-title mb-4 tm-text-primary">add new photo</h2>
+								<h2 class="tm-page-title mb-4 tm-text-primary">adit the photo</h2>
                                 <p class="mb-4">
                                     Integer sit amet odio id libero tincidunt dignissim in eget arcu. Aliquam tristique ut magna sit amet tincidunt. Sed tempor tellus nulla, molestie luctus lectus tincidunt id. You are <u>not allowed</u> to re-distribute the template ZIP file on any template collection website.
                                 </p>
@@ -43,9 +43,9 @@ https://templatemo.com/tm-552-video-catalog
                     <div class="mx-auto pb-3 tm-about-text-container px-3">
                         <div class="row">
                             <div class=" col-lg-12 mb-5">
-                                <form  id="contact-form" method="POST" action="/photos" class="tm-contact-form" encType="multipart/form-data">
+                                <form  id="contact-form" method="POST" action="/photos/<%=photo._id %>?_method=PUT" class="tm-contact-form" encType="multipart/form-data">
                                   <div class="form-group">
-                                    <input type="text" name="title" class="form-control rounded-0" placeholder="photo title" required>
+                                    <input type="text" name="title" value="<%=photo.title %>" class= "form-control rounded-0" placeholder="photo title" required>
                                   </div>
                                   <div class="form-group">
                                    
@@ -54,15 +54,11 @@ https://templatemo.com/tm-552-video-catalog
                                   </div>
                                   <div class="form-group">
                                     <textarea cols="100" rows="8" name="description" class="form-control rounded-0" placeholder="photo description"
-                                              required></textarea>
+                                              required><%=photo.description %></textarea>
                                   </div>
 
-                                  <div class="form-group">
-                                    <input type="file" name="image" class="form-control-file rounded-0" >
-                                  </div>                     
-
                                   <div class="form-group mb-0">
-                                    <button type="submit" class="btn btn-primary rounded-0 d-block ml-auto mr-0 tm-btn-animate tm-btn-submit tm-icon-submit"><span>Submit</span></button>
+                                    <button type="submit" class="btn btn-primary rounded-0 d-block ml-auto mr-0 tm-btn-animate tm-btn-submit tm-icon-submit"><span>Update</span></button>
                                   </div>
                                 </form>    
                             </div>
